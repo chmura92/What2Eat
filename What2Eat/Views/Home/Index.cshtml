@@ -60,7 +60,12 @@
             @Html.Label("Activity Level", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                @* @Html.DropDownList("sdas", new SelectList(Model.ActivityLevel, "Value", "Key"), new { @class = "control-label col-md-2" }) *@
-               
+                <select name="ActivityLevel" class="form-control">
+                    @foreach (var entity in What2Eat.Helpers.Bmr.ActivityLevel)
+                    {
+                        <option value="@entity.Value">@entity.Key</option>
+                    }
+                </select>
             </div>
         </div>                                              
 
