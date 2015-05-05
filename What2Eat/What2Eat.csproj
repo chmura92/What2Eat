@@ -167,11 +167,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\W2EContext.cs" />
     <Compile Include="DAL\W2EInitializer.cs" />
-    <Compile Include="Enums\DishCategory.cs" />
+    <Compile Include="Enums\MealCategory.cs" />
     <Compile Include="Enums\ProductKind.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Bmi.cs" />
+    <Compile Include="Helpers\Bmr.cs" />
     <Compile Include="Migrations\201505051013107_InitMigration.cs" />
     <Compile Include="Migrations\201505051013107_InitMigration.Designer.cs">
       <DependentUpon>201505051013107_InitMigration.cs</DependentUpon>
@@ -187,6 +189,7 @@
     <Compile Include="Models\Target.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAtributes.cs" />
+    <Compile Include="Models\UserCharacteristicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -246,6 +249,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\MealChoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
