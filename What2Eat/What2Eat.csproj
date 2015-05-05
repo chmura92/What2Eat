@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201505051947106_RemovedTarget.Designer.cs">
       <DependentUpon>201505051947106_RemovedTarget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505052311497_najnowsza.cs" />
+    <Compile Include="Migrations\201505052311497_najnowsza.Designer.cs">
+      <DependentUpon>201505052311497_najnowsza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddMealViewModel.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505051947106_RemovedTarget.resx">
       <DependentUpon>201505051947106_RemovedTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505052311497_najnowsza.resx">
+      <DependentUpon>201505052311497_najnowsza.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
