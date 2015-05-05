@@ -165,11 +165,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\W2EContext.cs" />
     <Compile Include="DAL\W2EInitializer.cs" />
     <Compile Include="Enums\MealCategory.cs" />
     <Compile Include="Enums\ProductKind.cs" />
+    <Compile Include="Enums\SexKind.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
