@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using What2Eat;
 using What2Eat.Controllers;
+using What2Eat.DAL;
+using What2Eat.Enums;
+using What2Eat.Models;
 
 namespace What2Eat.Tests.Controllers
 {
@@ -29,14 +32,18 @@ namespace What2Eat.Tests.Controllers
         [TestMethod]
         public void Contact()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            /*private W2EContext db = new W2EContext();
+            var model = new UserCharacteristicViewModel() {Bmi = 20, Bmr = 2000, MealCategory = MealCategory.breakfast};
 
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            Random rnd = new Random();
+            var partialModel = new Meal();
+            var validMeals = db.Meals.Where(x => x.MealCategory == model.MealCategory);
+            var selectedMeal = validMeals.ElementAt(rnd.Next(validMeals.Count()));
 
-            // Assert
-            Assert.IsNotNull(result);
+            partialModel.Name = selectedMeal.Name;
+            partialModel.MealCategory = selectedMeal.MealCategory;
+
+            // Act*/
         }
     }
 }

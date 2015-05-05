@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201505051757451_KcalUpdate.Designer.cs">
       <DependentUpon>201505051757451_KcalUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505051947106_RemovedTarget.cs" />
+    <Compile Include="Migrations\201505051947106_RemovedTarget.Designer.cs">
+      <DependentUpon>201505051947106_RemovedTarget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Meal.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505051757451_KcalUpdate.resx">
       <DependentUpon>201505051757451_KcalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505051947106_RemovedTarget.resx">
+      <DependentUpon>201505051947106_RemovedTarget.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

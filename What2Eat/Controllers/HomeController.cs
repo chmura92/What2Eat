@@ -34,8 +34,11 @@ namespace What2Eat.Controllers
             {
                 Random rnd = new Random();
                 var partialModel = new Meal();
-                var validMeals = db.Meals.Where(x => x.MealCategory == model.MealCategory);
-                var selectedMeal = validMeals.ElementAt(rnd.Next(validMeals.Count()));
+                var validMeals = db.Meals.Where(x => x.MealCategory == model.MealCategory).ToArray();
+                var selectedMeal = validMeals[(rnd.Next(validMeals.Count()))];
+
+                partialModel.Name = selectedMeal.Name;
+                partialModel.MealCategory = selectedMeal.MealCategory;
 
 
 
