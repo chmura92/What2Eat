@@ -50,43 +50,38 @@ namespace What2Eat.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MealId,Name,MealCategory")] AddMealViewModel aMeal)
+        public async Task<ActionResult> Create(AddMealViewModel aMeal)
         {
             if (ModelState.IsValid)
             {
                 var meal = new Meal();
+                var products = new List<MealProduct>();
                 meal.MealCategory = aMeal.MealCategory;
                 meal.Name = aMeal.Name;
 
                 if (aMeal.MP1 != null && aMeal.Product1 != null)
                 {
                     var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product1), BaseWaight = aMeal.MP1 };
-                    db.MealProducts.Add(p1);
-                    db.SaveChanges();
-                    meal.Products.Add(p1);
+                   // db.MealProducts.Add(p1);
+                    products.Add(p1);
+                    //db.SaveChanges();
                 }
                 if (aMeal.MP2 != null && aMeal.Product2 != null)
                 {
                     var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product2), BaseWaight = aMeal.MP2 };
-                    db.MealProducts.Add(p1);
-                    db.SaveChanges();
-                    meal.Products.Add(p1);
+                    products.Add(p1);
                 }
                 if (aMeal.MP3 != null && aMeal.Product3 != null)
                 {
                     var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product3), BaseWaight = aMeal.MP3 };
-                    db.MealProducts.Add(p1);
-                    db.SaveChanges();
-                    meal.Products.Add(p1);
+                    products.Add(p1);
                 }
                 if (aMeal.MP4 != null && aMeal.Product4 != null)
                 {
                     var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product4), BaseWaight = aMeal.MP4 };
-                    db.MealProducts.Add(p1);
-                    db.SaveChanges();
-                    meal.Products.Add(p1);
+                    products.Add(p1);
                 }
-
+                meal.Products = products;
                 db.Meals.Add(meal);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
