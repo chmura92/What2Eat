@@ -8,7 +8,6 @@ namespace What2Eat.Models
         public int UserId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public virtual Target Target { get; set; }
         public virtual UserAtributes Atributes { get; set; }
     }
 }

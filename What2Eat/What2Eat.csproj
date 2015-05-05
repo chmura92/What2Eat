@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201505051013107_InitMigration.Designer.cs">
       <DependentUpon>201505051013107_InitMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505051757451_KcalUpdate.cs" />
+    <Compile Include="Migrations\201505051757451_KcalUpdate.Designer.cs">
+      <DependentUpon>201505051757451_KcalUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Meal.cs" />
@@ -186,8 +190,9 @@
     <Compile Include="Models\LikedProduct.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MealProduct.cs" />
+    <Compile Include="Models\MealViewModel.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Target.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAtributes.cs" />
     <Compile Include="Models\UserCharacteristicViewModel.cs" />
@@ -266,6 +271,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201505051013107_InitMigration.resx">
       <DependentUpon>201505051013107_InitMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505051757451_KcalUpdate.resx">
+      <DependentUpon>201505051757451_KcalUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
