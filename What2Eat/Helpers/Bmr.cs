@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using What2Eat.Enums;
 
 namespace What2Eat.Helpers
 {
@@ -14,13 +15,13 @@ namespace What2Eat.Helpers
             {"Very heavy exercise/ physical job/ training 2 x/ day", 1.9}
         };
 
-        public static double ComputeBmr(double weight, int height, int age, string sex, double activity)
+        public static double ComputeBmr(double weight, int height, int age, SexKind sex, double activity)
         {
-            if (sex.ToUpper() == "MALE")
+            if (sex.ToString().ToUpper() == "MALE")
             {
                 return Math.Round((66 + 13.7 * weight + 5 * height + 6.8 * age * activity), 2);
             }
-            if (sex.ToUpper() == "FEMALE")
+            if (sex.ToString().ToUpper() == "FEMALE")
             {
                 return Math.Round((655 + 9.6 * weight + 1.8 * height + 4.7 * age * activity), 2);
             }

@@ -15,13 +15,13 @@ namespace What2Eat.DAL
 
             private void SeedW2ElData(W2EContext context) // wypelnienie danymi poczatkowymi
             {
-                var Users = new List<User>
-            {//a
-                new User() {Login = "Marian", Password = "inne"},
-                new User() {Login = "Kumalski", Password = "Jeszcze inne"}
-            };
-                Users.ForEach(a => context.Users.Add(a));
-                context.SaveChanges();
+            //    var Users = new List<User>
+            //{//a
+            //    new User() {Login = "Marian", Password = "inne"},
+            //    new User() {Login = "Kumalski", Password = "Jeszcze inne"}
+            //};
+            //    Users.ForEach(a => context.Users.Add(a));
+            //    context.SaveChanges();
             }
 
         } 

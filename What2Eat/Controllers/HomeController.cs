@@ -14,12 +14,12 @@ namespace What2Eat.Controllers
         {
             return View();
         }
-
-        public ActionResult ComputeCharacteristic(UserAtributes atr, double ActivityLevel)
+        [HttpPost]
+        public ActionResult Index(UserAtributes atr, double ActivityLevel)
         {
             var model = new UserCharacteristicViewModel() {
-                Bmi = Bmi.ComputeBmi(atr.Weight, atr.Haight),
-                Bmr = Bmr.ComputeBmr(atr.Weight,atr.Haight,atr.Age,atr.Sex,ActivityLevel),
+                Bmi = Bmi.ComputeBmi(atr.Weight, atr.Height),
+                Bmr = Bmr.ComputeBmr(atr.Weight,atr.Height,atr.Age,atr.Sex,ActivityLevel),
                 UserAtributes = atr
             };
 
