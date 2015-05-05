@@ -2,7 +2,12 @@
 {
     public enum ProductKind
     {
-        Nabial,
-        Pieczywo,
+        Nabiał,
+        ProduktZbożowy,
+        Mięso,
+        Ryby,
+        Warzywa,
+        Owoce,
+        Słodycze
     }
 }
