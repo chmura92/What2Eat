@@ -7,7 +7,7 @@ namespace What2Eat.DAL
 {
         public class W2EInitializer : DropCreateDatabaseAlways<W2EContext>  // niszczy baze przy kazdym uruchomieniu, do zmienienia pozniej
         {
-            protected void Seed(W2EContext context)
+            protected override void Seed(W2EContext context)
             {
                 SeedW2ElData(context);
                 base.Seed(context);
