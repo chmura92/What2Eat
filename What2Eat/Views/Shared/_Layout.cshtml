@@ -20,7 +20,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <p>@Html.ActionLink("What2Eat?", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</p>
+                    <p>@Html.ActionLink("What2Eat?", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})</p>
+                    </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Add Meal", "Index", "Meals", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Add Product", "Index", "Products", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Add MealProduct", "Index", "MealProducts", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        </ul>
                 </div>
             </div>
         </div>

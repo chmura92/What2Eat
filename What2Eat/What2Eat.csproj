@@ -165,7 +165,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MealProductsController.cs" />
     <Compile Include="Controllers\MealsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\W2EContext.cs" />
     <Compile Include="DAL\W2EInitializer.cs" />
     <Compile Include="Enums\MealCategory.cs" />
@@ -190,6 +192,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddMealViewModel.cs" />
     <Compile Include="Models\Meal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LikedProduct.cs" />
@@ -266,6 +269,16 @@
     <Content Include="Views\Meals\Details.cshtml" />
     <Content Include="Views\Meals\Edit.cshtml" />
     <Content Include="Views\Meals\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\MealProducts\Create.cshtml" />
+    <Content Include="Views\MealProducts\Delete.cshtml" />
+    <Content Include="Views\MealProducts\Details.cshtml" />
+    <Content Include="Views\MealProducts\Edit.cshtml" />
+    <Content Include="Views\MealProducts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

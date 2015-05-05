@@ -1,0 +1,26 @@
+﻿@model What2Eat.Models.MealProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MealProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseWaight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseWaight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MealProductId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

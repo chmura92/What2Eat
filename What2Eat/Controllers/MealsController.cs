@@ -40,7 +40,9 @@ namespace What2Eat.Controllers
         // GET: Meals/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new AddMealViewModel();
+            model.AllProducts = db.Products.ToArray();
+            return View(model);
         }
 
         // POST: Meals/Create
@@ -48,16 +50,50 @@ namespace What2Eat.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MealId,Name,MealCategory")] Meal meal)
+        public async Task<ActionResult> Create([Bind(Include = "MealId,Name,MealCategory")] AddMealViewModel aMeal)
         {
             if (ModelState.IsValid)
             {
+                var meal = new Meal();
+                meal.MealCategory = aMeal.MealCategory;
+                meal.Name = aMeal.Name;
+
+                if (aMeal.MP1 != null && aMeal.Product1 != null)
+                {
+                    var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product1), BaseWaight = aMeal.MP1 };
+                    db.MealProducts.Add(p1);
+                    db.SaveChanges();
+                    meal.Products.Add(p1);
+                }
+                if (aMeal.MP2 != null && aMeal.Product2 != null)
+                {
+                    var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product2), BaseWaight = aMeal.MP2 };
+                    db.MealProducts.Add(p1);
+                    db.SaveChanges();
+                    meal.Products.Add(p1);
+                }
+                if (aMeal.MP3 != null && aMeal.Product3 != null)
+                {
+                    var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product3), BaseWaight = aMeal.MP3 };
+                    db.MealProducts.Add(p1);
+                    db.SaveChanges();
+                    meal.Products.Add(p1);
+                }
+                if (aMeal.MP4 != null && aMeal.Product4 != null)
+                {
+                    var p1 = new MealProduct() { Product = db.Products.Find(aMeal.Product4), BaseWaight = aMeal.MP4 };
+                    db.MealProducts.Add(p1);
+                    db.SaveChanges();
+                    meal.Products.Add(p1);
+                }
+
                 db.Meals.Add(meal);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+        
 
-            return View(meal);
+             return View(aMeal);
         }
 
         // GET: Meals/Edit/5

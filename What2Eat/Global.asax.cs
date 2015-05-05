@@ -19,7 +19,7 @@ namespace What2Eat
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<W2EContext>(new DropCreateDatabaseIfModelChanges<W2EContext>());
+           // Database.SetInitializer<W2EContext>(new DropCreateDatabaseIfModelChanges<W2EContext>());
         }
     }
 }
