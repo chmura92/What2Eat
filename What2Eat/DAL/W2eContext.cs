@@ -15,7 +15,6 @@ namespace What2Eat.DAL
         public DbSet<LikedProduct> LikedProducts { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Target> Targets { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserAtributes> UserAtributes { get; set; }
         
