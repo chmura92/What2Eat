@@ -3,6 +3,6 @@
     public enum ProductKind
     {
         Nabial,
-        Pieczywo
+        Pieczywo,
     }
 }
