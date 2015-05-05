@@ -13,10 +13,7 @@ namespace What2Eat.Controllers
     {
         private W2EContext db = new W2EContext();
         public ActionResult Index()
-        {
-            var pr = new Product(){Name = "jakis name", KcalPer100g = 333};
-            db.Products.Add(pr);
-            db.SaveChanges();
+        {             
             return View();
         }
         [HttpPost]
