@@ -37,7 +37,7 @@ namespace What2Eat.Controllers
                 var selectedMeal = validMeals[(rnd.Next(validMeals.Count()))];
 
                 double? baseKcal =0;
-                double targetKcal =0;
+                double targetKcal = model.DayPercent/100.0 * model.Bmr;
                 double ratio;
 
                 foreach (var item in selectedMeal.Products)
