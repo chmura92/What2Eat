@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201505052311497_najnowsza.Designer.cs">
       <DependentUpon>201505052311497_najnowsza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505060003551_najnowszaKoziu.cs" />
+    <Compile Include="Migrations\201505060003551_najnowszaKoziu.Designer.cs">
+      <DependentUpon>201505060003551_najnowszaKoziu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddMealViewModel.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505052311497_najnowsza.resx">
       <DependentUpon>201505052311497_najnowsza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505060003551_najnowszaKoziu.resx">
+      <DependentUpon>201505060003551_najnowszaKoziu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
