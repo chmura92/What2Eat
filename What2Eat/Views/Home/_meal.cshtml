@@ -1,0 +1,60 @@
+﻿@model What2Eat.Models.MealViewModel
+
+<div>
+    <h4>MealViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalKcal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalKcal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalProteins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalProteins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCarbonites)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCarbonites)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWeight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MealViewModelId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
