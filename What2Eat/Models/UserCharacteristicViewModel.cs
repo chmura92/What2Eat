@@ -8,5 +8,6 @@ namespace What2Eat.Models
         public double Bmi { get; set; }
         public double Bmr { get; set; }
         public MealCategory? MealCategory { get; set; }
+        public int DayPercent { get; set; }
     }
 }
