@@ -34,7 +34,7 @@ namespace What2Eat.Controllers
             {
                 Random rnd = new Random();
                 var validMeals = db.Meals.Where(x => x.MealCategory == model.MealCategory).ToArray();
-                if (validMeals.Count() > 0)
+                if (validMeals.Any())
                 {
                     var selectedMeal = validMeals[(rnd.Next(validMeals.Count()))];
 
@@ -78,11 +78,11 @@ namespace What2Eat.Controllers
                     {
                         Name = selectedMeal.Name,
                         Products = computedProducts,
-                        TotalCarbonites = totalC,
-                        TotalFat = totalF,
-                        TotalKcal = totalK,
-                        TotalProteins = totalP,
-                        TotalWeight = totalW
+                        TotalCarbonites = Math.Round((totalC),2),
+                        TotalFat = Math.Round((totalF),2),
+                        TotalKcal = Math.Round((totalK),2),
+                        TotalProteins = Math.Round((totalP),2),
+                        TotalWeight = Math.Round((totalW),2)
                     };
 
                     return PartialView("_meal", partialModel);
