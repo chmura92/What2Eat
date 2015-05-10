@@ -3,63 +3,88 @@
 @{
     ViewBag.Title = "MealChoice";
 }
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">Choose Your Meal</div>
 
-<h2>MealChoice</h2>
+    <div class="panel-body ">
 
-<div>
-    <h4>UserCharacteristicViewModel</h4>
-    <hr/>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Bmi)
-        </dt>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <h4>Your resoult</h4>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Bmi)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bmi)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Bmi)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Bmr)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Bmr)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bmr)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Bmr)
+                </dd>
 
-    </dl>
-</div>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+            </dl>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Student</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+            <div class="form-horizontal">
+                <h4>Fill target</h4>
+                <hr />
+                @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DayPercent, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.DayPercent, new {@class = "form-control"})
-                @Html.ValidationMessageFor(model => model.DayPercent)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DayPercent, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.DayPercent, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DayPercent)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MealCategory, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.MealCategory, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MealCategory)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Next" class="btn btn-default" name="ComputeCharacteristic" />
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- modal placeholder-->
+        <div id='myModal' class='modal fade in'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'></div>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MealCategory, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.MealCategory, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MealCategory)
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Next" class="btn btn-default" name="ComputeCharacteristic" />
-            </div>
-        </div>
+        @Html.ActionLink("Add", "MealChoice", "Home", null, new { data_modal = Model, id = "btnCreate", @class = "saveButton", onclick = "return false;" })
     </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/modalform")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('.saveButton').click(function () {
+                $(this).closest('form')[0].submit();
+            });
+        });
+    </script>
 }
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
