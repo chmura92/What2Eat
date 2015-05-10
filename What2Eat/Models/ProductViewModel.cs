@@ -1,4 +1,6 @@
-﻿namespace What2Eat.Models
+﻿using System.Collections.Generic;
+
+namespace What2Eat.Models
 {
     public class ProductViewModel
     {
@@ -8,5 +10,11 @@
         public double Carbonites { get; set; }
         public double Fat { get; set; }
         public double Kcal { get; set; }
+        public List<ProductViewModel> Products { get; set; }
+        public double TotalCarbonites { get; set; }
+        public double TotalFat { get; set; }
+        public double TotalKcal { get; set; }
+        public double TotalProteins { get; set; }
+        public double TotalWeight { get; set; }
     }
 }
