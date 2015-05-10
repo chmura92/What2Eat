@@ -34,13 +34,13 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView("Details",product);
         }
 
         // GET: Products/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Products/Create
@@ -54,10 +54,10 @@ namespace What2Eat.Controllers
             {
                 db.Products.Add(product);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
 
-            return View(product);
+            return PartialView("Create",product);
         }
 
         // GET: Products/Edit/5
@@ -72,7 +72,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView("Edit",product);
         }
 
         // POST: Products/Edit/5
@@ -86,9 +86,9 @@ namespace What2Eat.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
-            return View(product);
+            return PartialView("Edit",product);
         }
 
         // GET: Products/Delete/5
@@ -103,7 +103,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView("Delete",product);
         }
 
         // POST: Products/Delete/5
@@ -114,7 +114,7 @@ namespace What2Eat.Controllers
             Product product = await db.Products.FindAsync(id);
             db.Products.Remove(product);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

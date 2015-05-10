@@ -34,13 +34,13 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(mealProduct);
+            return PartialView("Details",mealProduct);
         }
 
         // GET: MealProducts/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("Create");
         }
 
         // POST: MealProducts/Create
@@ -54,10 +54,10 @@ namespace What2Eat.Controllers
             {
                 db.MealProducts.Add(mealProduct);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
 
-            return View(mealProduct);
+            return PartialView("Create",mealProduct);
         }
 
         // GET: MealProducts/Edit/5
@@ -72,7 +72,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(mealProduct);
+            return PartialView("Edit",mealProduct);
         }
 
         // POST: MealProducts/Edit/5
@@ -86,9 +86,9 @@ namespace What2Eat.Controllers
             {
                 db.Entry(mealProduct).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
-            return View(mealProduct);
+            return PartialView("Edit",mealProduct);
         }
 
         // GET: MealProducts/Delete/5
@@ -103,7 +103,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(mealProduct);
+            return PartialView("Delete",mealProduct);
         }
 
         // POST: MealProducts/Delete/5
@@ -114,7 +114,7 @@ namespace What2Eat.Controllers
             MealProduct mealProduct = await db.MealProducts.FindAsync(id);
             db.MealProducts.Remove(mealProduct);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

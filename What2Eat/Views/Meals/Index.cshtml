@@ -3,11 +3,18 @@
 @{
     ViewBag.Title = "Index";
 }
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { data_modal = "" })
 </p>
 <table class="table">
     <tr>
@@ -29,11 +36,15 @@
             @Html.DisplayFor(modelItem => item.MealCategory)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MealId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MealId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MealId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MealId }, new { data_modal = "" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MealId }, new { data_modal = "" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MealId }, new { data_modal = "" })
         </td>
     </tr>
 }
 
 </table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modalform")
+}
