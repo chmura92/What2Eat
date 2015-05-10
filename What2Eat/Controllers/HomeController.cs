@@ -58,10 +58,10 @@ namespace What2Eat.Controllers
                     var x = new ProductViewModel()
                     {
                         Name = item.Product.Name,
-                        Carbonites = item.Product.CarbonitesPer100g * weight/100,
-                        Fat = item.Product.FatPer100g * weight/100,
-                        Proteins = item.Product.ProteinsPer100g * weight/100,
-                        Kcal = item.Product.KcalPer100g * weight/100,
+                        Carbonites = (double)item.Product.CarbonitesPer100g * weight/100,
+                        Fat = (double)item.Product.FatPer100g * weight/100,
+                        Proteins = (double)item.Product.ProteinsPer100g * weight/100,
+                        Kcal = (double)item.Product.KcalPer100g * weight/100,
                         Weight = weight
                     };
                     computedProducts.Add(x);
