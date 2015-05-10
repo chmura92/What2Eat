@@ -34,7 +34,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(meal);
+            return PartialView("Details",meal);
         }
 
         // GET: Meals/Create
@@ -42,7 +42,7 @@ namespace What2Eat.Controllers
         {
             var model = new AddMealViewModel();
             model.AllProducts = db.Products.ToArray();
-            return View(model);
+            return PartialView("Create",model);
         }
 
         // POST: Meals/Create
@@ -84,11 +84,11 @@ namespace What2Eat.Controllers
                 meal.Products = products;
                 db.Meals.Add(meal);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
         
 
-             return View(aMeal);
+             return PartialView("Create",aMeal);
         }
 
         // GET: Meals/Edit/5
@@ -103,7 +103,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(meal);
+            return PartialView("Edit",meal);
         }
 
         // POST: Meals/Edit/5
@@ -117,9 +117,9 @@ namespace What2Eat.Controllers
             {
                 db.Entry(meal).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
-            return View(meal);
+            return PartialView("Edit",meal);
         }
 
         // GET: Meals/Delete/5
@@ -134,7 +134,7 @@ namespace What2Eat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(meal);
+            return PartialView("Delete",meal);
         }
 
         // POST: Meals/Delete/5
@@ -145,7 +145,7 @@ namespace What2Eat.Controllers
             Meal meal = await db.Meals.FindAsync(id);
             db.Meals.Remove(meal);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

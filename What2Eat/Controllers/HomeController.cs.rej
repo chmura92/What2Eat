@@ -1,0 +1,11 @@
+diff a/What2Eat/Controllers/HomeController.cs b/What2Eat/Controllers/HomeController.cs	(rejected hunks)
+@@ -34,6 +34,9 @@
+             {
+                 Random rnd = new Random();
+                 var validMeals = db.Meals.Where(x => x.MealCategory == model.MealCategory).ToArray();
++                if (validMeals.Count() > 0)
++                {
++                    var selectedMeal = validMeals[(rnd.Next(validMeals.Count()))];
+ 
+                     double? baseKcal = 0;
+                     double targetKcal = model.DayPercent/100.0*model.Bmr;
