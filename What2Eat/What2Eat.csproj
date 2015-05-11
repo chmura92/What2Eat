@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201505060003551_najnowszaKoziu.Designer.cs">
       <DependentUpon>201505060003551_najnowszaKoziu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505101754127_chmurka.cs" />
+    <Compile Include="Migrations\201505101754127_chmurka.Designer.cs">
+      <DependentUpon>201505101754127_chmurka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddMealViewModel.cs" />
@@ -223,6 +227,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -283,6 +288,7 @@
     <Content Include="Views\MealProducts\Edit.cshtml" />
     <Content Include="Views\MealProducts\Index.cshtml" />
     <Content Include="Views\Home\_meal.cshtml" />
+    <Content Include="Views\Home\Meal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505060003551_najnowszaKoziu.resx">
       <DependentUpon>201505060003551_najnowszaKoziu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505101754127_chmurka.resx">
+      <DependentUpon>201505101754127_chmurka.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

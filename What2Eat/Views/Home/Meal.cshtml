@@ -1,0 +1,164 @@
+﻿@model What2Eat.Models.MealViewModel
+
+@{
+    ViewBag.Title = "Meal";
+}
+<h2>Meal is ready!</h2>
+
+<div>
+    <h4>Total info of meal:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.Label("IsVegeterian")
+        </dt>
+
+        <dd>
+            @Html.Label("No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalKcal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalKcal)
+        </dd>
+
+        <dt>
+            <span>Percent of day: </span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayPercent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalProteins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalProteins) <span> grams</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCarbonites)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCarbonites) <span> grams</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFat) <span> grams</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWeight) <span> grams</span>
+        </dd>
+    </dl>
+</div>
+
+
+<div>
+    <h4>Info about products:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Products)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => item.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Kcal)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Kcal)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Proteins)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Proteins) <span> grams</span>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Carbonites)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Carbonites) <span> grams</span>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Fat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Fat) <span> grams</span>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => item.Weight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.Weight) <span> grams</span>
+            </dd>
+            <br />
+        }
+    </dl>
+</div>
+
+
+<div>
+    <h4>Info about You:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.Label("Total Calories per day:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bmr) <span> Kcal</span>
+        </dd>
+        <dt>
+            @Html.Label("Your BMI:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bmi) <span> Kcal</span>
+        </dd>
+            @Html.Label("Your BMI should be between 20 - 25")
+        </dl>
+</div>
+
+
+<p>
+    @Html.ActionLink("Generate again", "GenerateMeal", Model)
+</p>

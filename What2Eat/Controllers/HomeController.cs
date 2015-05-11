@@ -29,7 +29,7 @@ namespace What2Eat.Controllers
             return RedirectToAction("MealChoice", model);
         }
 
-        public ActionResult MealChoice(UserCharacteristicViewModel model)
+        public ActionResult GenerateMeal(MealViewModel model)
         {
             if (model.MealCategory != null)
             {
@@ -62,13 +62,12 @@ namespace What2Eat.Controllers
                         double weight = (double)(item.BaseWaight * ratio);
                         var x = new ProductViewModel()
                         {
-                            Name = selectedMeal.Name,
-                            Products = computedProducts,
-                            TotalCarbonites = Math.Round((totalC), 2),
-                            TotalFat = Math.Round((totalF), 2),
-                            TotalKcal = Math.Round((totalK), 2),
-                            TotalProteins = Math.Round((totalP), 2),
-                            TotalWeight = Math.Round((totalW), 2)
+                            Name = item.Product.Name,
+                            Carbonites = Math.Round(((double) (item.Product.CarbonitesPer100g * weight / 100.0)),2),
+                            Fat = Math.Round(((double) (item.Product.FatPer100g * weight / 100.0)),2),
+                            Proteins = Math.Round(((double) (item.Product.ProteinsPer100g * weight / 100.0)),2),
+                            Kcal = Math.Round(((double) (item.Product.KcalPer100g * weight / 100.0)),2),
+                            Weight = Math.Round(weight,2)
                         };
                         computedProducts.Add(x);
                         totalW += x.Weight;
@@ -78,8 +77,12 @@ namespace What2Eat.Controllers
                         totalK += x.Kcal;
                     }
 
-                    var partialModel = new MealViewModel
+                    var Model = new MealViewModel
                     {
+                        Bmi = model.Bmi,
+                        Bmr = model.Bmr,
+                        MealCategory = model.MealCategory,
+                        DayPercent = model.DayPercent,
                         Name = selectedMeal.Name,
                         Products = computedProducts,
                         TotalCarbonites = totalC,
@@ -89,10 +92,20 @@ namespace What2Eat.Controllers
                         TotalWeight = totalW
                     };
 
-                    return PartialView("_meal", partialModel);
+                    return View("Meal", Model);
                 }
                 }
+            return View("Meal", model);
+        }
+
+        public ActionResult MealChoice(UserCharacteristicViewModel model)
+        {
             return View(model);
+        }
+        [HttpPost]
+        public ActionResult MealChoice(MealViewModel model)
+        {
+            return RedirectToAction("GenerateMeal", model);
         }
 
         public ActionResult Contact()

@@ -3,15 +3,7 @@
 @{
     ViewBag.Title = "MealChoice";
 }
-<br/>
-   <!-- modal placeholder-->
-<div id='myModal' class='modal fade in'>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div id='myModalContent'></div>
-        </div>
-    </div>
-</div>
+<br /><br />
 <div class="panel panel-primary">
     <div class="panel-heading">Choose Your Meal</div>
 
@@ -66,16 +58,22 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Next" class="btn btn-default" name="ComputeCharacteristic" />
+                        <input type="submit" value="Next" class="btn btn-default" name="ComputeCharacteristic" data_modal="" />
                     </div>
                 </div>
             </div>
         }
-     
+        <!-- modal placeholder-->
+        <div id='myModal' class='modal fade in'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id='myModalContent'></div>
+                </div>
+            </div>
+        </div>
 
 
-        @Html.ActionLink("Add", "MealChoice", "Home", null, new { data_modal = Model, id = "btnCreate", @class = "saveButton", onclick = "return false;" })
-    </div>
+      </div>
 </div>
 
 @section Scripts {

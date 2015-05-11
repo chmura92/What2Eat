@@ -18,6 +18,8 @@ namespace What2Eat.DAL
 
         public System.Data.Entity.DbSet<What2Eat.Models.MealProduct> MealProducts { get; set; }
 
+        public System.Data.Entity.DbSet<What2Eat.Models.MealViewModel> MealViewModels { get; set; }
+
         //public DbSet<Target> Targets { get; set; }
       //  public DbSet<User> Users { get; set; }
         //public DbSet<UserAtributes> UserAtributes { get; set; }
